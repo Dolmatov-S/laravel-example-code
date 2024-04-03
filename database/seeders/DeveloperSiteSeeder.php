@@ -17,7 +17,7 @@ class DeveloperSiteSeeder extends Seeder
         foreach (Site::all() as $site) {
             DeveloperSite::firstOrCreate([
                 'site_id' => $site->id,
-                'developer_id' => Developer::select('id')->orderByRaw('RAND()')->first()->id
+                'developer_id' => Developer::whereHas('framework', fn($query) => $query->where('framework_id', $site->framework_id))->select('id')->orderByRaw('RAND()')->first()->id
             ]);
         }
     }

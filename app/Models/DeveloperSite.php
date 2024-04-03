@@ -2,13 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class DeveloperSite extends Model
 {
-    use HasFactory;
     protected $fillable = ['developer_id', 'site_id'];
     protected $primaryKey = ['developer_id', 'site_id'];
     public $incrementing = false;
