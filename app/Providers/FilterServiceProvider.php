@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\View\Composers\Filter\FilterDeveloperSelectComposer;
+use App\View\Composers\Filter\FilterFrameworkSelectComposer;
 use App\View\Composers\Filter\FilterSiteSelectComposer;
 use Illuminate\Support\ServiceProvider;
 
@@ -23,5 +24,6 @@ class FilterServiceProvider extends ServiceProvider
     {
         \View::composer('components.filter.filter-developer-select', FilterDeveloperSelectComposer::class);
         \View::composer('components.filter.filter-site-selector', FilterSiteSelectComposer::class);
+        \View::composer('components.filter.filter-framework-selector', FilterFrameworkSelectComposer::class);
     }
 }
