@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\ApiV1Controller;
+use App\Http\Controllers\Api\v1\DeveloperApiV1Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::prefix('v1')->name('api.v1.')->group(function () {
+    Route::post('/developer', [ApiV1Controller::class, 'getDevelopers'])->name('developer');
+    Route::post('/site', [ApiV1Controller::class, 'getDevelopers'])->name('site');
 });

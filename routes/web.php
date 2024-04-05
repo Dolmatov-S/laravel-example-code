@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FilterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FilterController::class, 'getDevelopers'])->name('developers');
+Route::get('/site', [FilterController::class, 'getSite'])->name('sites');
