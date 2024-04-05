@@ -8,12 +8,10 @@ export const DeveloperTemplate = (developer) => {
        </div>
    </div>
     <div class="flex gap-6 items-center">
-        <a href="${developer.links.site}" class="text-sm text-slate-500 hover:text-blue-500">${developer.site_count} - сайт(ов)</a>
+        <a href="${developer.site_link}" class="text-sm text-slate-500 hover:text-blue-500">${developer.site_count} - сайт(ов)</a>
         <span  class="py-3 px-4 inline-flex items-center gap-x-2 text-xs font-semibold rounded-lg border border-gray-200 text-gray-500">
-            ${developer.salary.toLocaleString()} Руб/Мес.
+            ${developer.salary.toLocaleString()} Руб.
         </span>
     </div>
-</article>
-
-`;
+</article>`;
 }
