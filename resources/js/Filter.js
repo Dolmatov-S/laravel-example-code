@@ -1,6 +1,7 @@
-import {SkeletonTemplate} from "@/Templates/Skeleton.template.js";
-import {DeveloperTemplate} from "@/Templates/Developer.template.js";
-import {NotFoundTemplate} from "@/Templates/NotFound.template.js";
+import {SkeletonTemplate} from "./Templates/Skeleton.template.js";
+import {DeveloperTemplate} from "./Templates/Developer.template.js";
+import {NotFoundTemplate} from "./Templates/NotFound.template.js";
+import {SiteTemplate} from "./Templates/Site.template.js";
 
 const form = document.querySelector('form'),
     selects = document.querySelectorAll('select'),
@@ -12,7 +13,6 @@ const form = document.querySelector('form'),
         'site_id': false,
         'framework_id' : false
     };
-let result_response;
 
 
 
@@ -39,7 +39,7 @@ const parserResultFilter = (result) => {
                 filter_content.insertAdjacentHTML('afterbegin', DeveloperTemplate(item))
             }
             else if(filter_type === 'site') {
-                filter_content.insertAdjacentHTML('afterbegin', DeveloperTemplate(item))
+                filter_content.insertAdjacentHTML('afterbegin', SiteTemplate(item))
             }
             else {
                 filter_content.innerHTML - `<div class="text-red-900">Что-то пошло не так! Обновите страницу</div>`
