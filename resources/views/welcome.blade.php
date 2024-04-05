@@ -15,9 +15,11 @@
 </head>
 <body class="bg-slate-100">
 
+    <x-general.navbar />
+
     <x-filter.filter-section :$action :$filter_type />
 
-    <section class="w-[50rem] mx-auto space-y-5" id="filter_content">
+    <section class="w-[50rem] mx-auto space-y-5 mb-20" id="filter_content">
 
     </section>
 </body>

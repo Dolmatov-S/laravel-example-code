@@ -19,7 +19,7 @@ final class DeveloperRepository
      * @param array $data
      * @return \LaravelIdea\Helper\App\Models\_IH_Developer_QB
      */
-    public function getDeveloperWitchFilter(array $data)
+    public function getDeveloperByFilter(array $data)
     {
         return Developer::filter($this->filterMake($data));
     }
