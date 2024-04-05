@@ -23,7 +23,7 @@ class DeveloperResource extends JsonResource
             'frameworks' => Framework::whereIn('id', $this->framework()->select('framework_id')->get()->toArray())
                 ->select('name')
                 ->get()
-                ->implode('name', ', '),
+                ->map(fn($item) => $item->name),
             'salary' => $this->salary,
         ];
     }

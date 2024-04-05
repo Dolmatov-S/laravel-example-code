@@ -4,7 +4,7 @@ export const DeveloperTemplate = (developer) => {
        <div class="w-12 h-12 bg-slate-200 flex items-center justify-center rounded-full">${developer.name[0]}</div>
        <div>
            <p class="font-semibold">${developer.name}</p>
-           <p class="text-slate-500 text-xs">${developer.frameworks}</p>
+           <p class="text-slate-500 text-xs">${developer.frameworks.length ? developer.frameworks.join(',  ') : 'Нет изученных фреймворков' }</p>
        </div>
    </div>
     <div class="flex gap-6 items-center">
