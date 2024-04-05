@@ -1,5 +1,7 @@
 @props(['developers' => []])
-<select multiple="" data-hs-select='{
+<label>
+    <select multiple="" data-hs-select='{
+    "hasSearch": true,
   "placeholder": "Выберите разработчика",
   "toggleTag": "<button type=\"button\"></button>",
   "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-3 px-4 pe-9 flex text-nowrap w-full cursor-pointer bg-white border border-gray-200 rounded-lg text-start text-sm focus:border-blue-500 focus:ring-blue-500 before:absolute before:inset-0 before:z-[1] dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400",
@@ -9,8 +11,10 @@
   "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"hidden hs-selected:block\"><svg class=\"flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500\" xmlns=\"http:.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg></span></div>",
   "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><svg class=\"flex-shrink-0 size-3.5 text-gray-500 dark:text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m7 15 5 5 5-5\"/><path d=\"m7 9 5-5 5 5\"/></svg></div>"
 }' class="hidden">
-    <option value="">Выберите разработчика</option>
-    @foreach($developers as $developer)
-        <option @if($developer->active) selected @endif value="{{$developer->id}}">{{ $developer->name }}</option>
-    @endforeach
-</select>
+        <option value="">Выберите разработчика</option>
+        @foreach($developers as $developer)
+            <option @selected($developer['active']) value="{{$developer['id']}}">{{ $developer['name'] }}</option>
+        @endforeach
+    </select>
+
+</label>

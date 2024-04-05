@@ -21,7 +21,7 @@ class FilterSiteSelectComposer {
     public function compose(View $view)
     {
         $sites = $this->filterRepository->getSiteWitchRequestSelect($this->queryFilterRequest->get('site_id'));
-        $view->with('sites', $sites);
+        $view->with('sites', $sites->toArray());
     }
 
 }
